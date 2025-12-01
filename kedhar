@@ -1,0 +1,136 @@
+# HCP CRM – Log Interaction (Round 1 Assignment)  
+**Developer:** <Your Name>
+
+This project is the full implementation for **Task 1 (Technical)** of the Round-1 assignment:  
+Building an **AI-First CRM Log Interaction Screen** with:
+- React + Vite (Frontend)
+- FastAPI (Backend)
+- SQLite / Postgres (Database)
+- LangGraph-style tools  
+- LLM-based Summarization (Gemma / Llama)
+
+---
+
+# 📁 Project Structure
+
+/frontend        → React + Vite App  
+/backend         → FastAPI Backend  
+README.md        → This file  
+
+---
+
+# 🚀 How to Run the Project Locally
+
+## 1️⃣ Backend Setup (FastAPI)
+
+### Install dependencies
+cd backend  
+python -m venv .venv  
+source .venv/bin/activate     # Windows: .venv\Scripts\activate  
+pip install -r requirements.txt  
+
+### Create `.env` inside backend
+DATABASE_URL=sqlite:///./dev.db  
+LLM_API_KEY=YOUR_LLM_KEY  
+LLM_ENDPOINT=https://api.example-llm.com/v1/generate  
+LLM_PROVIDER=gemma  
+
+### Run backend server
+uvicorn main:app --reload --host 0.0.0.0 --port 8000  
+
+### Test backend  
+Open Swagger: http://localhost:8000/docs  
+
+---
+
+# 2️⃣ Frontend Setup (React + Vite)
+
+### Install dependencies
+cd frontend  
+npm install  
+npm run dev  
+
+### Create `.env` in frontend
+VITE_API_BASE=http://localhost:8000  
+
+### Open frontend  
+http://localhost:5173  
+
+You will see:
+- Structured Form  
+- Chat/Transcript Summarizer  
+
+---
+
+# 🧠 LLM Usage (Required)
+
+This project uses an LLM to:
+- Summarize transcripts  
+- Extract Topics / Follow-ups / Sentiment  
+- Support LangGraph tools  
+
+LLM logic is inside: backend/llm_client.py  
+
+---
+
+# 🤖 LangGraph Tools (5 Required)
+
+Tools implemented in: backend/langgraph_tools.py
+
+1. log_interaction  
+2. edit_interaction  
+3. find_hcp  
+4. suggest_followup  
+5. compliance_check  
+
+---
+
+# ✔️ API Endpoints Overview
+
+POST /interactions – Create interaction  
+POST /interactions/summarize – Summarize transcript  
+GET /interactions/{id} – Fetch stored interaction  
+PUT /interactions/{id} – Edit interaction  
+
+---
+
+# 🎬 Task-1 Video Checklist (10–15 minutes)
+
+You must show:
+✔️ Frontend working  
+✔️ Backend APIs working  
+✔️ LangGraph tools code  
+✔️ LLM summary output  
+✔️ Your face visible  
+
+---
+
+# 🧾 Task-2 (QMS)
+
+Prepare a PPT with:
+- Deviation → CAPA flow  
+- Complaints & Recalls  
+- Supplier Quality  
+- Roles: QA Officer, Production Manager  
+(No AI images)
+
+Record 10–15 mins explanation video.
+
+---
+
+# 📌 Submission Checklist
+
+✔️ Frontend working  
+✔️ Backend working  
+✔️ LLM summarization shown  
+✔️ LangGraph tools shown  
+✔️ Task-1 video ready  
+✔️ Task-2 video ready  
+✔️ Repo link submitted in Google Form  
+
+---
+
+# 🙌 Credits  
+Built for Round-1 Assignment  
+Assisted & formatted with ChatGPT
+-
